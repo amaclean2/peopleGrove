@@ -1,5 +1,9 @@
 import React, { Component } from 'react';
 
+/*
+  shows the viewable row in the users table
+*/
+
 class UserEntryView extends Component {
   render() {
     let minutes = this.props.totalTime,

@@ -4,6 +4,22 @@ import { Button } from 'react-bootstrap';
 import Months from './Months';
 import DayEvents from './DayEvents';
 
+/*
+  Shows the events for any given day
+
+  state:
+    day - the date to be rendered
+    month - the month ot be rendered
+    year - the year to be rendered
+
+  functions:
+    getNext() - renders the next day when called
+    getPrevious() - renders the previous day when called
+    goToAdd() - renders the <addActivity /> Component
+    setDate() - sets the values in the state to the date passed in the props
+    componentWillMount() - calls the setDate() function
+*/
+
 class DayView extends Component {
   constructor() {
     super()

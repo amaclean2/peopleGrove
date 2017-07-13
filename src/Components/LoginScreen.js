@@ -1,6 +1,8 @@
 import React, { Component } from 'react';
 import FacebookLogin from 'react-facebook-login';
 
+// renders the login with Facebook button and sends the information to the server
+
 class LoginScreen extends Component {
   constructor() {
     super()

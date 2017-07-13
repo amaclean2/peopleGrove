@@ -1,6 +1,18 @@
 import React, { Component } from 'react';
 import { Button, FormControl } from 'react-bootstrap';
 
+/*
+  shows the editable row in the users table
+
+  state:
+    account - the new admin priviledges of the user
+
+  functions:
+    setAccount(e) - changes the account state property
+    handleSave() - sends the state information to the server and calls the <UserEntryView /> Component
+    componentWillMount() - sets the account state property to the value passed to the component
+*/
+
 class UserEntry extends Component {
   constructor() {
     super()

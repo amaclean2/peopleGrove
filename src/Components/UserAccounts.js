@@ -5,10 +5,15 @@ import SampleData from './SampleData';
 
 import UserEntry from './UserEntry';
 
+/*
+  displays a table of all users in the app and their admin status
+*/
+
 class UserAccounts extends Component {
   render() {
     let users = SampleData.Users.map(user => {
       let i, totalTime = 0
+      // renders the total time logged by each user in the app
       for ( i in SampleData.Logs ) {
         if(SampleData.Logs[i].userId === user.id && SampleData.Logs[i].finishTime !== null) {
           let element = SampleData.Logs[i]

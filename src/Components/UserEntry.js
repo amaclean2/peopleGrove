@@ -3,6 +3,16 @@ import React, { Component } from 'react';
 import UserEntryView from './UserEntryView';
 import UserEntryEdit from './UserEntryEdit';
 
+/*
+  shows each item in the users table
+
+  state:
+    edit - determines whether the line is in edit mode or view mode
+
+  functions:
+    toggleEdit() - assigns the edit state property
+*/
+
 class UserEntry extends Component {
   constructor() {
     super()
