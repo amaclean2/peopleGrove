@@ -1,5 +1,13 @@
 @import url('https://fonts.googleapis.com/css?family=Roboto');
 
+/*
+  For a relatively simple stylesheet, I felt that a CSS preprocessor wasn't needed so this
+  styling is just written in vanilla CSS.
+  Roboto font is added
+  Bootstrap styling is added
+*/
+
+/*general item styling*/
 body {
   margin: 0;
   font-family: 'Roboto', arial;
@@ -8,8 +16,19 @@ body {
 h2 { margin: 20px; font-size: 25px; }
 h3 { font-size: 23px; margin: 10px 0; }
 ul { list-style-type: none; padding: 0; margin: 0; }
+button {
+  margin: 5px;
+}
+tr { cursor: pointer; }
+
+/*styling for the main title*/
 .title { margin: 10px 20px; }
+
+/*styling for the navigation group*/
 .nav { margin: 5px; }
+
+/*styling for the components in the wrapper*/
+/*applies to each of calendar, editView, dayView, addActivity, users, login*/
 .wrapper {
   background-color: #fff;
   box-sizing: border-box;
@@ -20,14 +39,19 @@ ul { list-style-type: none; padding: 0; margin: 0; }
   box-shadow: 0 3px 10px rgba(0,0,0,0.5);
   position: relative;
 }
+
+/*the smaller of the two component widths*/
 .smallWidth {
   width: 98%;
   max-width: 500px;
 }
+
+/*the larger of the two component widths*/
 .fullWidth {
   width: 98%;
   max-width: 1200px;
 }
+
 .loginScreen {
   text-align: center;
 }
@@ -44,15 +68,17 @@ ul { list-style-type: none; padding: 0; margin: 0; }
 .facebookButton i{
   padding-right: 15px;
 }
-button {
-  margin: 5px;
-}
-tr { cursor: pointer; }
+
+/*styling for viewActivity component*/
 .indent {
   margin-left: 5px;
   margin-top: 10px;
 }
+
+/*styles the heading of calendar and dayView*/
 .dateHeading {margin-bottom: 25px;}
+
+/*styles the background of a clickable space*/
 .clickable {
   cursor: pointer;
   padding: 10px;
@@ -61,9 +87,13 @@ tr { cursor: pointer; }
 .clickable:hover {
   background-color: #eee;
 }
+
+/*adds a margin to the interior of the calendar component*/
 .calendarView{
   margin: 15px 0;
 }
+
+/*styling for particular calendar elements*/
 .calHeading, .calendarDays {
   display: flex;
   padding: 0;
@@ -88,11 +118,6 @@ tr { cursor: pointer; }
   border-bottom: 1px solid #ccc;
   cursor: pointer;
 }
-.buttonSpace {
-  position: absolute;
-  right: 15px;
-  top: 15px;
-}
 .calEventBox li {
   background-color: rgba(0,0,0,0.7);
   color: #FFF;
@@ -102,6 +127,16 @@ tr { cursor: pointer; }
   margin: 3px;
   color: #FFF;
 }
+
+/*styling for the div containing the forward and back buttons on the <Calendar /> and <DayView />
+Components*/
+.buttonSpace {
+  position: absolute;
+  right: 15px;
+  top: 15px;
+}
+
+/*styling for <DayView /> Component*/
 .dayEvent {
   background-color: rgba(0,0,0,0.3);
   padding: 5px 10px;

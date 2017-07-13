@@ -1,6 +1,20 @@
 import React, { Component } from 'react';
 import { FormGroup, FormControl, ControlLabel, Button } from 'react-bootstrap';
 
+/*
+  renders the form to edit an activty
+
+  state:
+    activty: the activity name
+    description: the activty description
+
+  functions:
+    setActivity() & setDescription() sets the state of activty and description
+      onChange of thier respective form fields
+    handleSend() - calls the funciton to send the information to the server
+      and goes back to the view component
+*/
+
 class EditActivityForm extends Component {
   constructor() {
     super()

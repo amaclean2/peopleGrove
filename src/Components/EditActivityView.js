@@ -3,6 +3,14 @@ import { FormGroup, ControlLabel, Button } from 'react-bootstrap';
 
 import Months from './Months';
 
+/*
+  renders the component to view an activty
+
+  functions:
+    handleEndActivity() - sends the finish time to the server and goes back to <DayView />
+    getFinished() - shows the finish time if the activty is finished or the end button if it isn't
+*/
+
 class EditActivityView extends Component {
   constructor() {
     super()
@@ -35,6 +43,7 @@ class EditActivityView extends Component {
   }
 
   render() {
+    // renders the time the activity started
     let finishTime = this.getFinished(),
         month = Months[this.props.log.startTime.getMonth()],
         year = this.props.log.startTime.getFullYear(),
@@ -47,6 +56,8 @@ class EditActivityView extends Component {
       startHour -= 12
       dayZone = 'PM'
     }
+
+    // renders the time since the activity started
     if(!this.props.log.finished) {
       let time = new Date().getTime() - this.props.log.startTime.getTime()
       time /= 60000

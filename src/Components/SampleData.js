@@ -1,3 +1,9 @@
+/*
+  the example data used in the app
+  this would be replaced by database data, but there was a bug in the responses to the
+  database that I couldn't figure out how to fix
+*/
+
 
 let SampleData = {
   Users: [

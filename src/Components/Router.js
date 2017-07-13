@@ -8,6 +8,18 @@ import DayView from './DayView';
 import EditActivity from './EditActivity';
 import UserAccounts from './UserAccounts';
 
+/*
+  renders the router for the components
+
+  state:
+    date - the date to be used in <DayView />
+    activityId - the activity to be shown in <EditActivity />
+
+  functions:
+    setDate(newDate) & setActivity(newId) - updates the state
+    showActivity() - redirects to <Calendar /> if no activityId state is selected
+*/
+
 class Router extends Component {
   constructor() {
     super()

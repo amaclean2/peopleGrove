@@ -5,6 +5,19 @@ import SampleData from './SampleData';
 import EditActivityView from './EditActivityView';
 import EditActivityForm from './EditActivityForm';
 
+/*
+  Shows the view for editing and viewing an activity
+
+  state:
+    edit: determines when to show the edit form or just the information of the activity
+    activity: the specific activity to be shown
+
+  functions:
+    toggleEdit() - swithces between edit and view
+    showViews() - shows view or edit depending on the edit state property
+    componentWillMount() - sets the activity state property
+*/
+
 class EditActivity extends Component {
   constructor() {
     super()

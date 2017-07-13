@@ -3,6 +3,21 @@ import Navigation from './Components/Navigation';
 import Router from './Components/Router';
 import './App.css';
 
+/*
+  App.js contains all of the connection function to the server file and the links to the <Navigation /> and <Router /> Components
+  The state for App.js contains the title for the application, the userId since it has to be kept throughout the whole application
+    to validate some components, and the activityId so that when an activity is called, it can be accessed by the <EditActivity /> Component
+
+  Functions in App.js:
+    setUser(id) - sends the information to the server.js file to create a new user
+    editUser(id, newAccount) - sends changes in account permissions
+    addActivity(id, newActivity, newDescription) - sends new activity information to server.js file
+      *This function returned a bad response 400 error that I couldn't figure out what was wrong,
+      so it doesn't complete the request
+    endActivity(activityId) - sends the activity id to the server file for a finish time to be added to the entry
+    editActivity(activityId, newActivity, newDescription) - sends new information to be edited
+*/
+
 class App extends Component {
   constructor() {
     super()
@@ -123,6 +138,11 @@ class App extends Component {
       })
   }
 
+  /*
+    function to retrive table information to be filled instead of SampleData, but since the responses
+      won't work, the SampleData has to stay to demonstrate the app.
+  */
+
   // componentWillMount() {
   //   fetch('http://localhost:3001/api/users')
   //     .then(function(response) {
@@ -134,6 +154,8 @@ class App extends Component {
   // }
 
   render() {
+    // renders <Navigation /> and <Router /> Components
+    // <Router /> passes all the database functions to each component so they can send their own data
     return (
       <div className="App">
         <h1 className="title">{this.state.title}</h1>

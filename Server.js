@@ -1,3 +1,6 @@
+// database access file
+
+// dependencies for accessing the postgresql databse
 let express = require('express'),
     path = require('path'),
     bodyParser = require('body-parser'),
@@ -7,6 +10,7 @@ let express = require('express'),
 
 const PORT = 3001;
 
+// defines pool properties
 let pool = new pg.Pool({
   port: 5432,
   password: 'k2snowboar',
@@ -26,6 +30,7 @@ app.use(function(request, response, next) {
   next();
 });
 
+// db query add a user
 app.post('/api/new-user', (request, response) => {
   let username = request.body.username
 
@@ -48,6 +53,7 @@ app.post('/api/new-user', (request, response) => {
   })
 })
 
+// db query edit user
 app.post('/api/edit-user', (request, response) => {
   let username = request.body.username,
       account = request.body.account
@@ -71,6 +77,7 @@ app.post('/api/edit-user', (request, response) => {
   })
 })
 
+// db query add an activity
 app.post('/api/add-activity', (request, response) => {
   let username = request.body.username,
       startTime = new Date().getFullYear() + '-' + new Date().getMonth() + '-' + new Date().getDate()
@@ -97,8 +104,10 @@ app.post('/api/add-activity', (request, response) => {
   })
 })
 
+// db query end an activity
 app.post('/api/end-activity', (request, response) => {
-  let finishTime = ('2017-07-13 11:18:23'),
+  let finishTime = new Date().getFullYear() + '-' + new Date().getMonth() + '-' + new Date().getDate()
+    + ' ' + new Date().getHours() + ':' + new Date().getMinutes() + ':' + new Date().getSeconds(),
       activityId = request.body.activity
 
   console.log(request)
@@ -121,6 +130,7 @@ app.post('/api/end-activity', (request, response) => {
   })
 })
 
+// db query edit an activity
 app.post('/api/edit-activity', (request, response) => {
   let username = request.body.username,
       activityName = request.body.activity,

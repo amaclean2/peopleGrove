@@ -2,6 +2,13 @@ import React, { Component } from 'react';
 
 import SampleData from './SampleData';
 
+/*
+  Renders the elements for the <DayView /> Component
+
+  functions:
+    goToView(id) - calls <EditActivity /> Component when called
+*/
+
 class DayEvents extends Component {
 
   goToView(id) {
@@ -11,6 +18,7 @@ class DayEvents extends Component {
 
   render() {
     let i, events = []
+    // selects the events out of the list of events to be added to this day
     for ( i in SampleData.Logs ) {
       if( i > 0 && this.props.day.getFullYear() === SampleData.Logs[i].startTime.getFullYear() &&
          this.props.day.getMonth() === SampleData.Logs[i].startTime.getMonth() &&

@@ -1,6 +1,9 @@
 import React, { Component } from 'react';
 import { Nav, NavItem } from 'react-bootstrap';
 
+// renders the nav-bar
+// if the userId for the app is not entered, then only the Login link will be displayed
+
 class Navigation extends Component {
 
   showNav() {

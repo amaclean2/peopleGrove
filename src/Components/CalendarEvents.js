@@ -2,10 +2,15 @@ import React, { Component } from 'react';
 
 import SampleData from './SampleData';
 
+/*
+  renders the events for each day of the month
+*/
+
 class CalendarEvents extends Component {
 
   render() {
     let i, events = []
+    // checks if an event is on that day, if it is then it is added to events
     for ( i in SampleData.Logs ) {
       if( i > 0 && this.props.day.getFullYear() === SampleData.Logs[i].startTime.getFullYear() &&
          this.props.day.getMonth() === SampleData.Logs[i].startTime.getMonth() &&
